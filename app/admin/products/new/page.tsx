@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import Image from 'next/image';
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { firestoredb, storage } from '../../../../../firebase/firestore';
+import { firestoredb, storage } from '@/firebase/firebaseconfig';
 
 interface TagType {
   tag1: string, 

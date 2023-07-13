@@ -6,7 +6,7 @@ import './popular.css';
 import PopularCard from './popularcard';
 import PopularHeader from './popularheader';
 import { collection, getDocs } from 'firebase/firestore';
-import { firestoredb } from '@/firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 
 interface AppCardType {
     id: string;
@@ -44,7 +44,7 @@ function Popular() {
                 setAppLists(prevState => [...prevState, newCard]);
             });
             })()
-        }, [applists])
+        }, [!applists])
 
   return (
     <div className="pt-5" id='populars'>

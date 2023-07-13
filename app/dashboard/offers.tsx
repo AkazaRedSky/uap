@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import OfferCard from "./offercard";
 import TempIMG from "public/assets/images/detroit.jpg";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { firestoredb } from "@/firebase/firestore";
+import { firestoredb } from "@/firebase/firebaseconfig";
 
 interface CardType {
    id: string;

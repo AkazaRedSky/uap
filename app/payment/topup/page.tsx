@@ -12,7 +12,6 @@ function TopUp() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Add your top-up logic here
     setAmount(0);
     setAlert(`Succesfully added Rp. ${amount} to your Account!`)
   };

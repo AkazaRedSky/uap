@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import ProductImage from './productImage';
 import Link from 'next/link';
 import { collection, getDocs } from 'firebase/firestore';
-import { firestoredb } from '../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 import DeleteApplication from './delete/page';
 
 interface ProductType {

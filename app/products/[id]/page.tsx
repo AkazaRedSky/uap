@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import ProductImage from './productImage';
 import Image from 'next/image';
 import { Timestamp, doc, getDoc } from 'firebase/firestore';
-import { firestoredb } from '../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 import TempIMG from 'public/assets/images/munir.jpg';
 import Icon from 'public/assets/images/icon.jpg';
 import Link from 'next/link';

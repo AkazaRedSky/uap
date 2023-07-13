@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { collection, doc, deleteDoc } from 'firebase/firestore';
-import { firestoredb } from '../../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 import { useRouter } from 'next/navigation';
 
 

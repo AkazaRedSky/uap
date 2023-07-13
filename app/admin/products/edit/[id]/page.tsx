@@ -5,7 +5,7 @@ import EditProductImage from './editImage';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { firestoredb } from '../../../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 import { doc, getDoc, collection, updateDoc, Timestamp } from 'firebase/firestore';
 import Link from 'next/link';
 

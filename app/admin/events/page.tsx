@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { Timestamp, collection, getDocs } from 'firebase/firestore';
-import { firestoredb } from '../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firebaseconfig';
 
 interface EventType {
         id: string;

@@ -2,7 +2,7 @@
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
-import { firestoredb } from "@/firebase/firestore";
+import { firestoredb } from "@/firebase/firebaseconfig";
 import React, { useState } from "react";
 
 function Register() {

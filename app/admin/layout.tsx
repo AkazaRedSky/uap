@@ -5,8 +5,7 @@ import { useRouter } from 'next/navigation';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { getCookie } from 'typescript-cookie';
-import { firestoredb } from '../../../firebase/firestore';
-import { auth } from '../../../firebase/firebaseAuth';
+import { firestoredb, auth } from '@/firebase/firebaseconfig';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false);
