@@ -17,23 +17,23 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const username = getCookie('username')
 
 
-    const checkUserAdmin = async () => {
-      if (user) {
-        const userColRef = collection(firestoredb, 'userdata');
-        const q = query(userColRef, where('username', '==', username));
-        const userSnap = await getDocs(q);
-        const userDoc = userSnap.docs[0];
-        if (userDoc.exists()) {
-          setIsAdmin(userDoc.get("userType") === 'admin')
-        } else {
-          router.push('/404');
-        }
-      } else {
-        router.push('/404'); 
-      }
-    };
+    // const checkUserAdmin = async () => {
+    //   if (user) {
+    //     const userColRef = collection(firestoredb, 'userdata');
+    //     const q = query(userColRef, where('username', '==', username));
+    //     const userSnap = await getDocs(q);
+    //     const userDoc = userSnap.docs[0];
+    //     if (userDoc.exists()) {
+    //       setIsAdmin(userDoc.get("userType") === 'admin')
+    //     } else {
+    //       router.push('/404');
+    //     }
+    //   } else {
+    //     router.push('/404'); 
+    //   }
+    // };
 
-    checkUserAdmin();
+    // checkUserAdmin();
   }, [router]);
   
     return (

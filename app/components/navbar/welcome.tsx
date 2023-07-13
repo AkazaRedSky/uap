@@ -3,14 +3,14 @@
 import { useState, useEffect, Fragment } from 'react';
 import { getCookie, removeCookie, setCookie } from 'typescript-cookie';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { firestoredb } from '../../../../firebase/firestore';
+import { firestoredb } from '@/firebase/firestore';
 import { User, signOut } from 'firebase/auth';
 import Image from 'next/image';
 import TempIMG from 'public/assets/images/temp.jpg';
 import { buttonVariants } from '../buttoncomponent';
 import { Menu, Transition } from '@headlessui/react'
 import Link from 'next/link';
-import { auth } from '../../../../firebase/firebaseAuth';
+import { auth } from '@/firebase/firebaseAuth';
 
 function classNames(...classes:string[]) {
     return classes.filter(Boolean).join(' ')
