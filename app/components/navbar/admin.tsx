@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { buttonVariants } from '../buttoncomponent';
-import { firestoredb } from '../../../../firebase/firestore';
-import { auth } from '../../../../firebase/firebaseAuth';
+import { firestoredb } from '@/firebase/firestore';
+import { auth } from '@/firebase/firebaseAuth';
 import { onAuthStateChanged } from 'firebase/auth';
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { getCookie } from 'typescript-cookie';
 
 interface userType {

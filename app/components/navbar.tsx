@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { FC } from 'react';
+import React from 'react';
 import { buttonVariants } from './buttoncomponent';
 import Welcome from './navbar/welcome';
 import AdminNavbar from './navbar/admin';
