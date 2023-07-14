@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { buttonVariants } from "../buttoncomponent";
+import { buttonVariants } from "../../buttoncomponent";
 import { firestoredb, auth } from "@/firebase/firebaseconfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";

@@ -1,6 +1,10 @@
 # PROJECT UAP
 
-an Application for Game Purchasing~
+Game Purchase Application
+
+## Feature
+
+- x
 
 ## Changelog
 

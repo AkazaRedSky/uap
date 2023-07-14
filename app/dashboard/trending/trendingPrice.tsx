@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "./popular.css";
+import "./trending.css";
 
 interface AppPriceType {
    price: number;

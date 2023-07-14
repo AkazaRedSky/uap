@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import OfferCard from "./offercard";
-import TempIMG from "public/assets/images/detroit.jpg";
+import OfferCard from "../components/ui/offercard";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { firestoredb } from "@/firebase/firebaseconfig";
 
@@ -28,7 +27,6 @@ function Offer() {
          setLoading(true);
          const appcolRef = collection(firestoredb, "applicationlist");
          const queryRef = query(appcolRef, where("currentEvent", "!=", ""));
-
          const snapshots = await getDocs(queryRef);
          const fetchedapps = snapshots.docs.map((doc) => {
             const data = doc.data();
@@ -36,14 +34,14 @@ function Offer() {
             return data;
          });
 
-         const limitedApps = fetchedapps.slice(0, 9);
+         const limitApps = fetchedapps.slice(0, 9);
 
-         const newCards = limitedApps.map((app) => ({
+         const newCards = limitApps.map((app) => ({
             id: app.id,
             event: app.currentEvent,
             wallpaper: app.applicationImage,
             title: app.applicationName,
-            enddate: "9th May",
+            enddate: "27th July",
             endtime: "12 AM",
             discountpercentage: app.eventDiscount,
             originalprice: app.applicationPrice,
@@ -53,7 +51,7 @@ function Offer() {
       };
       fetchCards();
       setLoading(false);
-   }, [cardlists]);
+   }, []);
 
    return (
       <div className="mx-[2rem] " id="offers">

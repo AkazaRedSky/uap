@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "@/firebase/firebaseAuth";
+import { auth } from "@/firebase/firebaseconfig";
 
 function Logout() {
    const router = useRouter();

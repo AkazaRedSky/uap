@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar from "./components/navbar";
+import Navbar from "./components/ui/navbar";
 
 export default function Home() {
    return (
@@ -7,16 +7,16 @@ export default function Home() {
          <div>
             <Navbar />
          </div>
-         <main className="flex min-h-screen flex-col items-center justify-between p-24">
+         <main className="flex flex-col items-center justify-between p-24">
             <div className="z-10 w-full max-w-5xl justify-between font-mono text-sm">
                <div className="p-2">
                   <h1 className="text-center text-white/75 text-[2rem]">
-                     PROJECT UAP 1.2{" "}
+                     PROJECT UAP 1.2
                   </h1>
                </div>
                <div className="p-2">
                   <h1 className="text-center text-slate-300 text-[1rem]">
-                     Aplikasi Pembelian Permainan Video
+                     Game Purchase Application
                   </h1>
                </div>
                <div className="p-2 flex justify-center">

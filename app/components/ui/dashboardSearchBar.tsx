@@ -12,41 +12,51 @@ interface ProductType {
 
 export default function SearchBar() {
    const [searchTerm, setSearchTerm] = useState("");
+   const [fetchedproducts, setFetchedProducts] = useState<ProductType[]>([]);
    const [products, setProducts] = useState<ProductType[]>([]);
    const [loading, setLoading] = useState(false);
 
+   // Data Fetch
    useEffect(() => {
       const fetchProducts = async () => {
          setLoading(true);
          setProducts([]);
 
-         if (searchTerm.trim() === "") {
-            setLoading(false);
-            return;
-         }
-
          const productsCollection = collection(firestoredb, "applicationlist");
          const querySnapshot = await getDocs(productsCollection);
          const productsData: ProductType[] = [];
-         const lowercaseSearchTerm = searchTerm.toLowerCase();
          let count = 0;
          querySnapshot.forEach((doc) => {
-            if (count >= 3) return;
             const product = { id: doc.id, ...doc.data() } as ProductType;
-            if (
-               product.applicationName
-                  .toLowerCase()
-                  .includes(lowercaseSearchTerm)
-            ) {
-               productsData.push(product);
-               count++;
-            }
+            productsData.push(product);
+            count++;
          });
-         setProducts(productsData);
-         setLoading(false);
+         setFetchedProducts(productsData);
       };
-
       fetchProducts();
+   }, []);
+
+   // Search Field
+   useEffect(() => {
+      if (searchTerm.trim() === "") {
+         setLoading(false);
+         return;
+      }
+      const lowercaseSearchTerm = searchTerm.toLowerCase();
+      const productsData: ProductType[] = [];
+      let count = 0;
+      fetchedproducts.forEach((doc) => {
+         if (count >= 3) return;
+         const product = { ...doc } as ProductType;
+         if (
+            product.applicationName.toLowerCase().includes(lowercaseSearchTerm)
+         ) {
+            productsData.push(product);
+            count++;
+         }
+      });
+      setProducts(productsData);
+      setLoading(false);
    }, [searchTerm]);
 
    const handleSearchChange = (event: any) => {

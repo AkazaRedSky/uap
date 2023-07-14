@@ -1,9 +1,8 @@
 import './globals.css';
-import Navbar from './components/navbar';
 
 export const metadata = {
   title: 'Project UAP',
-  description: 'Go Beyond',
+  description: 'Game Purchase Application',
 }
 
 export default function RootLayout({
